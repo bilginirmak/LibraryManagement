@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagement"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="LibraryManagement.Librarian"
+        mc:Ignorable="d"
+        Title="Librarian" Height="608" Width="960" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="214" Margin="164,202,0,0" VerticalAlignment="Top" Width="482" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label Content="Students" HorizontalAlignment="Left" Margin="164,170,0,0" VerticalAlignment="Top" Height="32" Width="96" FontSize="22"/>
+        <TabControl>
+
+            <TabItem Header="Books" FontFamily="JetBrains Mono">
+                <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <DataGrid x:Name="dataView" HorizontalAlignment="Center" Height="283" Margin="0,261,0,0" VerticalAlignment="Top" Width="960"  SelectionChanged="DataGrid_SelectionChanged_1" FontFamily="JetBrains Mono"/>
+                    <Canvas HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="563" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                        <TextBox x:Name="textboxTitle" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="172" Canvas.Top="40" VerticalAlignment="Top" FontFamily="JetBrains Mono" MouseDoubleClick="textboxTitle_MouseDoubleClick"/>
+                        <Label Content="Title" FontFamily="JetBrains Mono" HorizontalAlignment="Left" Canvas.Left="56" Canvas.Top="41" VerticalAlignment="Top"/>
+                        <TextBox x:Name="textboxAuthor" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="172" Canvas.Top="69" VerticalAlignment="Top" FontFamily="JetBrains Mono"/>
+                        <Label Content="Author" FontFamily="JetBrains Mono" HorizontalAlignment="Left" Canvas.Left="56" Canvas.Top="70" VerticalAlignment="Top"/>
+                        <TextBox x:Name="textboxPublishedYear" TextWrapping="Wrap" Width="185" HorizontalAlignment="Left" Canvas.Left="172" Canvas.Top="97" VerticalAlignment="Center" FontFamily="JetBrains Mono"/>
+                        <Label Content="Published Year" FontFamily="JetBrains Mono" HorizontalAlignment="Left" Canvas.Left="56" Canvas.Top="99" VerticalAlignment="Top"/>
+                        <TextBox x:Name="textboxISBN" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="172" Canvas.Top="127" VerticalAlignment="Top" FontFamily="JetBrains Mono"/>
+                        <Label Content="ISBN" FontFamily="JetBrains Mono" HorizontalAlignment="Left" Canvas.Left="56" Canvas.Top="128" VerticalAlignment="Top"/>
+                        <TextBox x:Name="textboxQuantity" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Canvas.Left="172" Canvas.Top="156" VerticalAlignment="Top" FontFamily="JetBrains Mono"/>
+                        <Label Content="Quantity" FontFamily="JetBrains Mono" HorizontalAlignment="Left" Canvas.Left="56" Canvas.Top="157" VerticalAlignment="Top"/>
+                        <Button x:Name="buttonAddBook" Content="Add Book" HorizontalAlignment="Left" Canvas.Left="197" Canvas.Top="203" VerticalAlignment="Top" Click="Button_Click_1" FontFamily="JetBrains Mono"/>
+                        <Button Content="Delete Book" Canvas.Left="316" Canvas.Top="203" Click="Button_Click_3" FontFamily="JetBrains Mono"/>
+                        <TextBox x:Name="textboxID" Height="30" Canvas.Left="396" TextWrapping="Wrap" Canvas.Top="150" Width="79" FontFamily="JetBrains Mono" MouseDoubleClick="textboxID_MouseDoubleClick"/>
+                        <Label Content="Book ID" FontFamily="JetBrains Mono" Canvas.Left="328" Canvas.Top="150" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <Button x:Name="Update" Content="Update" Canvas.Left="455" Canvas.Top="203" Click="Update_Click" FontFamily="JetBrains Mono"/>
+                    </Canvas>
+                    <WrapPanel HorizontalAlignment="Left" Height="34" Margin="615,10,0,0" VerticalAlignment="Top" Width="335">
+                        <TextBox x:Name="textboxSearch" TextWrapping="Wrap" Text="Search" Width="220" Background="White" Margin="0,0,20,0" FontFamily="JetBrains Mono" FontSize="14" MouseDoubleClick="textboxSearch_MouseDoubleClick_1"/>
+                        <Button x:Name="btnSearch" Content="Search" Width="85" Click="btnSearch_Click" Margin="0,0,10,0" FontFamily="JetBrains Mono"/>
+                    </WrapPanel>
+                    <Button Content="Show All Books" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_2" Margin="793,202,0,0" FontFamily="JetBrains Mono"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Students" FontFamily="JetBrains Mono">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
